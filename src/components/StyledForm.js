@@ -40,7 +40,9 @@ export const StyledErrorDiv = styled.div`
   color: crimson;
 `;
 
-export const StyledH2 = styled.h2`
-  display: inline;
-  margin: 3%;
-`;
+export const StyledCheckbox = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items:flex-end;
+`
+

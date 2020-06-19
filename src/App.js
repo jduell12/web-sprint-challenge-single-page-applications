@@ -3,7 +3,7 @@ import {Link, Switch, Route} from 'react-router-dom'
 import {Styledheader, Styledtitle, StyledButton} from './StyledApp'
 import * as Yup from 'yup'
 import Form from './components/Form'
-import formSchema from '../validation/formSchema'
+import formSchema from './validation/formSchema'
 
 const App = () => {
   const initialFormValues = {
