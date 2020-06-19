@@ -26,13 +26,13 @@ const App = () => {
   const initialOrder = []
   const initialDisabled = true
 
-  const [order, setOrder] = useState(initialOrder)
+  const [orders, setOrders] = useState(initialOrder)
   const [formValues, setFormValues] = useState(initialFormValues)
   const [formErrors, setFormErrors] = useState(initialFormErrors)
   const [disabled, setDisabled] = useState(initialDisabled)
 
   const onInputChange = event => {
-
+    
   }
 
   const onCheckboxChange = event => {
@@ -48,6 +48,8 @@ const App = () => {
       toppings: Object.keys(formValues.toppings).filter(item => formValues.toppings[item]),
       instructions: formValues.instructions.trim()
     }
+
+    setOrders([...orders, order])
   }
 
   useEffect(() => {
