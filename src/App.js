@@ -61,7 +61,10 @@ const App = () => {
 
     setFormValues({
       ...formValues,
-      [name]:checked
+      toppings: {
+        ...formValues.toppings,
+        [name]:checked
+      }
     })
   }
 
