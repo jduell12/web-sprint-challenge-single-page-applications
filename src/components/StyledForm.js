@@ -53,5 +53,5 @@ export const StyledContainer = styled.div`
     margin: 5%;
     padding: 0, 5%;
     background-color:aliceblue;
-    width: 300%;
+    width: 100%;
 `

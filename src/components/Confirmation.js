@@ -11,6 +11,7 @@ export default function Confirmation(props){
 
     return (
        <StyledInnerForm>
+           <h1>Congrats! Pizza is on it's way!</h1>
             {
                 order.map(o => {
                 return (

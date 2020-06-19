@@ -77,12 +77,19 @@ describe('Enters in valid input and submits an order', () => {
 
     it('Enters data into the input fields', () => {
         cy.get('#nameInput').type('Name')
+            .should('have.value', 'Name')
         cy.get('#sizeInput').select('Large')
+            .should('have.value', 'large')
         cy.get('#pepperoniInput').check()
+            .should('be.checked')
         cy.get('#mushroomInput').check()
+            .should('be.checked')
         cy.get('#baconInput').check()
+            .should('be.checked')
         cy.get('#onionInput').check()
+            .should('be.checked')
         cy.get('[name=instructions').type('Gluten Free')
+            .should('have.value', 'Gluten Free')
     })
 
     it('Add order button is enabled and submits order and is redirected to home page', () => {
