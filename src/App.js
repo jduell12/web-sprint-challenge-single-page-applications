@@ -82,7 +82,11 @@ const App = () => {
   }
 
   useEffect(() => {
-
+    formSchema.isValid(formValues).then(valid => {
+      console.log(formValues)
+      console.log(valid)
+      setDisabled(!valid);
+    })
   }, [formValues])
 
   return (

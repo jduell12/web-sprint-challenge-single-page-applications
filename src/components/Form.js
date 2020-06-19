@@ -64,7 +64,7 @@ export default function Form(props){
                     value={values.instructions}
                 />
            </StyledInnerForm>
-           <StyledButton disabled={disabled}>Submit Order</StyledButton>
+           <StyledButton disabled={disabled}>Add to Order</StyledButton>
        </StyledForm>
     )
 }

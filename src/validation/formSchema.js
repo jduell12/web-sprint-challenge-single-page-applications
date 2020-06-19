@@ -7,12 +7,8 @@ const formSchema = Yup.object().shape({
         .required('Name is required'),
     size: Yup
         .string()
-        .required('A size is required'),
-    toppings: Yup
-        .string()
-        .oneOf(['pepperoni, mushrooms, bacon, onion']),
-    instructions: Yup
-        .string()
+        .oneOf(['extra large', 'large', 'medium', 'small', 'extra small'])
+        .required('A size is required')
 });
 
 export default formSchema;
