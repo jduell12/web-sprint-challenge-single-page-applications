@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import {Link, Switch, Route, useHistory} from 'react-router-dom'
 import {Styledheader, Styledtitle, StyledButton} from './StyledApp'
 import * as Yup from 'yup'
+import axios from 'axios'
 import Form from './components/Form'
 import Order from './components/Order'
 import Confirmation from './components/Confirmation'
@@ -25,6 +26,18 @@ const App = () => {
   const initialFormErrors = {
     name: '',
     size: '',
+  }
+
+  const postNewOrder = newOrder => {
+    axios.post('https://reqres.in/api/users', newOrder)
+      .then(res => {
+        setOrders([res.data, ...orders,])
+      })
+      .finally(() => {
+        setFormValues(initialFormValues)
+        // history.push('/')
+        history.push('/confirm')
+      })
   }
 
   const initialOrder = []
@@ -82,15 +95,7 @@ const App = () => {
       instructions: formValues.instructions.trim()
     }
 
-    setFormValues(initialFormValues)
-
-    setOrders([...orders, order])
-    // history.push('/')
-    history.push('/confirm')
-
-    return (
-      <Confirmation order={orders}/>
-    )
+    postNewOrder(order)
   }
 
 
