@@ -4,7 +4,7 @@ import {Styledheader, Styledtitle, StyledButton} from './StyledApp'
 import * as Yup from 'yup'
 import axios from 'axios'
 import Form from './components/Form'
-import Order from './components/Order'
+// import Order from './components/Order'
 import Confirmation from './components/Confirmation'
 import formSchema from './validation/formSchema'
 
