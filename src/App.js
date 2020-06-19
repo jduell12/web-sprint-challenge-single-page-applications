@@ -3,6 +3,7 @@ import {Link, Switch, Route, useHistory} from 'react-router-dom'
 import {Styledheader, Styledtitle, StyledButton} from './StyledApp'
 import * as Yup from 'yup'
 import Form from './components/Form'
+import Order from './components/Order'
 import Confirmation from './components/Confirmation'
 import formSchema from './validation/formSchema'
 
@@ -84,7 +85,7 @@ const App = () => {
     setFormValues(initialFormValues)
 
     setOrders([...orders, order])
-    history.push('/')
+    history.push('/confirm')
   }
 
 
@@ -113,6 +114,10 @@ const App = () => {
               />
             </Route>
 
+            <Route path='/confirm'>
+              <Confirmation order={orders}/>
+            </Route>
+
             <Route path='/'>
               <h1>Your favorite food, delivered while coding</h1>
               <Link to={'/pizza'}><StyledButton>Pizza?</StyledButton></Link>
@@ -122,7 +127,7 @@ const App = () => {
       {
         orders.map(order => {
           return (
-          <Confirmation orders={order} />
+          <Order orders={order} />
           )
         })
       }

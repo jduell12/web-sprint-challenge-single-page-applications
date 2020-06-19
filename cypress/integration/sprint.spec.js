@@ -90,9 +90,6 @@ describe('Enters in valid input and submits an order', () => {
             .should('be.enabled')
             .click()
         cy.url().should('not.include', '/pizza')
-        cy.contains('coding')
-        cy.contains('Pizza?')
-        cy.contains('Name: Name')
 
     })
 })
