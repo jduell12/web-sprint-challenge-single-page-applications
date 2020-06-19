@@ -1,7 +1,10 @@
 import React from "react";
+import {StyledForm, StyledInnerForm, StyledButton, StyledErrorDiv, StyledH2} from './StyledForm'
 
-export default function Form(){
+export default function Form(props){
     return (
-        <div></div>
+       <StyledForm>
+
+       </StyledForm>
     )
 }
