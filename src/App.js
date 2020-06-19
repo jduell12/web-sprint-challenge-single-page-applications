@@ -57,7 +57,12 @@ const App = () => {
   }
 
   const onCheckboxChange = event => {
+    const {name, checked} = event.target
 
+    setFormValues({
+      ...formValues,
+      [name]:checked
+    })
   }
 
   const onSubmit = event => {
