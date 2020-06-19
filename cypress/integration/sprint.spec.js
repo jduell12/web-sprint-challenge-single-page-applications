@@ -63,6 +63,36 @@ describe('Checks that error messages appear appropiately', () => {
         cy.get('#sizeInput').select('')
 
         cy.contains('A size is required')
-        
+    })
+
+    it('add order button is disabled', () => {
+        cy.contains('Add to Order').should('be.disabled')
+    })
+})
+
+describe('Enters in valid input and submits an order', () => {
+    it('navigates to size', () => {
+        cy.visit('http://localhost:3000/pizza')
+    })
+
+    it('Enters data into the input fields', () => {
+        cy.get('#nameInput').type('Name')
+        cy.get('#sizeInput').select('Large')
+        cy.get('#pepperoniInput').check()
+        cy.get('#mushroomInput').check()
+        cy.get('#baconInput').check()
+        cy.get('#onionInput').check()
+        cy.get('[name=instructions').type('Gluten Free')
+    })
+
+    it('Add order button is enabled and submits order and is redirected to home page', () => {
+        cy.contains('Add to Order')
+            .should('be.enabled')
+            .click()
+        cy.url().should('not.include', '/pizza')
+        cy.contains('coding')
+        cy.contains('Pizza?')
+        cy.contains('Name: Name')
+
     })
 })
