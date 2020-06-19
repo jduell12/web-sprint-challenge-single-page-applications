@@ -51,7 +51,7 @@ export const StyledContainer = styled.div`
     border-radius: 6px;
     box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
     margin: 5%;
-    padding: 5%;
+    padding: 0, 5%;
     background-color:aliceblue;
-    text-align: initial;
+    width: 300%;
 `

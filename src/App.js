@@ -85,7 +85,12 @@ const App = () => {
     setFormValues(initialFormValues)
 
     setOrders([...orders, order])
-    history.push('/')
+    // history.push('/')
+    history.push('/confirm')
+
+    return (
+      <Confirmation order={orders}/>
+    )
   }
 
 
@@ -113,10 +118,10 @@ const App = () => {
                 errors = {formErrors}
               />
             </Route>
-{/* 
+
             <Route path='/confirm'>
               <Confirmation order={orders}/>
-            </Route> */}
+            </Route>
 
             <Route path='/'>
               <h1>Your favorite food, delivered while coding</h1>
@@ -124,13 +129,13 @@ const App = () => {
             </Route>
           </Switch>
       </Styledtitle>
-      {
+      {/* {
         orders.map(order => {
           return (
           <Order orders={order} />
           )
         })
-      }
+      } */}
     </div>
   );
 };
