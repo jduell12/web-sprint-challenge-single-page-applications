@@ -2,9 +2,10 @@ import React from "react";
 import {StyledForm, StyledInnerForm, StyledButton, StyledErrorDiv, StyledCheckbox} from './StyledForm'
 
 export default function Form(props){
+
     const {values, onSubmit, onInputChange, onCheckboxChange, disabled, errors} = props
     return (
-       <StyledForm>
+       <StyledForm onSubmit={onSubmit} >
            <h1>Build Your Own Pizza</h1>
            <StyledErrorDiv>
                 <div>{errors.name}</div>
@@ -57,14 +58,14 @@ export default function Form(props){
                 </StyledCheckbox>
                 
                 Special Instructions 
-                <textarea 
-                    id='instructionInput'
+                <input 
+                    type='text'
                     name='instructions'
-                    onChange={onInputChange}
                     value={values.instructions}
+                    onChange={onInputChange}
                 />
            </StyledInnerForm>
-           <StyledButton disabled={disabled}>Add to Order</StyledButton>
+          <StyledButton disabled={disabled}>Add to Order</StyledButton>
        </StyledForm>
     )
 }

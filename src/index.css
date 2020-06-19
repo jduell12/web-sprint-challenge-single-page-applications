@@ -28,6 +28,7 @@ label {
 
 input[type=text], select {
   height: 1.5rem;
+  margin: 3%;
 }
 
 a{

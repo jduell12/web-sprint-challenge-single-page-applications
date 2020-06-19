@@ -1,11 +1,14 @@
 import React, {useState, useEffect} from "react";
-import {Link, Switch, Route} from 'react-router-dom'
+import {Link, Switch, Route, useHistory} from 'react-router-dom'
 import {Styledheader, Styledtitle, StyledButton} from './StyledApp'
 import * as Yup from 'yup'
 import Form from './components/Form'
+import Confirmation from './components/Confirmation'
 import formSchema from './validation/formSchema'
 
 const App = () => {
+  const history = useHistory();
+
   const initialFormValues = {
     name: '',
     size: '',
@@ -78,13 +81,15 @@ const App = () => {
       instructions: formValues.instructions.trim()
     }
 
+    setFormValues(initialFormValues)
+
     setOrders([...orders, order])
+    history.push('/')
   }
+
 
   useEffect(() => {
     formSchema.isValid(formValues).then(valid => {
-      console.log(formValues)
-      console.log(valid)
       setDisabled(!valid);
     })
   }, [formValues])
@@ -114,6 +119,13 @@ const App = () => {
             </Route>
           </Switch>
       </Styledtitle>
+      {
+        orders.map(order => {
+          return (
+          <Confirmation orders={order} />
+          )
+        })
+      }
     </div>
   );
 };
