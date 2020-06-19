@@ -85,7 +85,7 @@ const App = () => {
     setFormValues(initialFormValues)
 
     setOrders([...orders, order])
-    history.push('/confirm')
+    history.push('/')
   }
 
 
@@ -113,10 +113,10 @@ const App = () => {
                 errors = {formErrors}
               />
             </Route>
-
+{/* 
             <Route path='/confirm'>
               <Confirmation order={orders}/>
-            </Route>
+            </Route> */}
 
             <Route path='/'>
               <h1>Your favorite food, delivered while coding</h1>
