@@ -31,6 +31,7 @@ const App = () => {
   const postNewOrder = newOrder => {
     axios.post('https://reqres.in/api/users', newOrder)
       .then(res => {
+        console.log(res.data);
         setOrders([res.data, ...orders,])
       })
       .finally(() => {
